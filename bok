@@ -51,7 +51,7 @@ tagsearch () {
 
 sview () {  
   match=$(grep -rnw $BOK_DIR -e "$1" | 
-          sed "s/:[0-9]*:.*//")
+          sed "s/:[0-9]*:.*//" | sort)
   lesskey $BOK_KEYS
   less $match
   echo ' ' | lesskey /dev/sdtin
@@ -60,7 +60,7 @@ sview () {
 tview () {  
   match=$(grep -rnw $BOK_DIR -e "$1" |
           grep ":2:" |
-          sed "s/:2:.*//")
+          sed "s/:2:.*//" | sort)
   lesskey $BOK_KEYS
   less $match
   echo ' ' | lesskey /dev/sdtin
