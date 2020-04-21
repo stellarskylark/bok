@@ -23,7 +23,7 @@ view() {
 
         # get index of target entry
   n=$(expr -1 + $( # line numbers start at 1, but index starts at 0
-                  grep -n $(date -d "$1" '+%Y/%m/%d') <<< $journal | 
+                  grep -n $(date -d "$1" '+%Y/%m/%d') < $journal | 
                   cut -f1 -d:))
         
   lesskey $BOK_KEYS # set custom keybindings
