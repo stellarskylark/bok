@@ -53,8 +53,8 @@ sview () {
   match=$(grep -rnw "$BOK_DIR" -e "$1" | 
           sed "s/:[0-9]*:.*//" | sort)
   lesskey "$BOK_KEYS"
-  less "$match"
-  echo ' ' | lesskey /dev/sdtin
+  less $match
+  echo ' ' | lesskey /dev/stdin
 }
 
 tview () {  
@@ -62,8 +62,8 @@ tview () {
           grep ":2:" |
           sed "s/:2:.*//" | sort)
   lesskey "$BOK_KEYS"
-  less "$match"
-  echo ' ' | lesskey /dev/sdtin
+  less $match
+  echo ' ' | lesskey /dev/stdin
 }
 
 showhelp () {
