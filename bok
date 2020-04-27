@@ -27,7 +27,7 @@ view() {
                   cut -f1 -d:))
         
   lesskey "$BOK_KEYS" # set custom keybindings
-  less +"$n"l "$journal"
+  less +"$n"l $journal
   echo ' ' | lesskey /dev/stdin # restore default keybindings
 }
 
