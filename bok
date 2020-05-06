@@ -12,7 +12,9 @@ edit() {
   # being sure not to overwrite an existing file
   [ ! -f "$file" ] &&
     (date -d "$1" '+%a %D' | install -D /dev/stdin "$file")
-  $EDITOR "$file"
+  [ "$EDITOR" = "vim" ] && 
+    $EDITOR -c ":set tw=79" "$file" ||
+    $EDITOR "$file"
 }
 
 view() {
