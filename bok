@@ -97,14 +97,14 @@ showhelp () {
 [ ! -f "$BOK_KEYS" ] && echo ".bokrc file does not exist, creating" &&
   cp /usr/share/bok/bokrc.default "$HOME"/.bokrc
 [ -z ${1+x} ] && showhelp && exit 1
-[ "$1" = "new" ]        && edit "$(date)"  && exit 0
-[ "$1" = "edit" ]       && edit "$2"       && exit 0
-[ "$1" = "view" ]       && view "$2"       && exit 0
-[ "$1" = "search" ]     && search "$2"     && exit 0
-[ "$1" = "searcht" ]    && tagsearch "$2"  && exit 0
-[ "$1" = "searchv" ]    && sview "$2"      && exit 0
-[ "$1" = "searchtv" ]   && tview "$2"      && exit 0
-[ "$1" = "searchvt" ]   && tview "$2"      && exit 0
+[ "$1" = "new" ]        && edit "$(date +%Y/%m/%d)"   && exit 0
+[ "$1" = "edit" ]       && edit "$2"                  && exit 0
+[ "$1" = "view" ]       && view "$2"                  && exit 0
+[ "$1" = "search" ]     && search "$2"                && exit 0
+[ "$1" = "searcht" ]    && tagsearch "$2"             && exit 0
+[ "$1" = "searchv" ]    && sview "$2"                 && exit 0
+[ "$1" = "searchtv" ]   && tview "$2"                 && exit 0
+[ "$1" = "searchvt" ]   && tview "$2"                 && exit 0
 
 showhelp && exit 1
 
